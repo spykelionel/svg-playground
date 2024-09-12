@@ -1,0 +1,194 @@
+/* Container to hold the icons in a circle */
+.circle-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 50px auto;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotateCircle 8s infinite linear; /* Add rotation */
+}
+
+/* Add the dotted line around the circle */
+.circle-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px dashed #000;
+  animation: changeDottedColor 8s infinite linear; /* Add color change */
+}
+
+/* Learnoso text in the center */
+.center-text {
+  position: absolute;
+  font-size: 2rem;
+  font-weight: bold;
+  animation: waveColor 5s infinite;
+}
+
+/* Icons positioned in a circular layout */
+.icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Position each icon */
+.concrete-experience {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.reflective-observation {
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+
+.abstract-conceptualization {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.active-experimentation {
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Arrow animation */
+.arrow {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 9999px;
+  background: url("arrow.png") no-repeat center;
+  background-size: contain;
+  animation: moveArrow 4s infinite linear, colorChange 4s infinite linear;
+}
+
+/* Animate the arrow in a circular path */
+@keyframes moveArrow {
+  0% {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  25% {
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  50% {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+  75% {
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%) rotate(270deg);
+  }
+  100% {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Animate color changes for arrow */
+@keyframes colorChange {
+  0% {
+    background-color: red;
+  }
+  25% {
+    background-color: blue;
+  }
+  50% {
+    background-color: green;
+  }
+  75% {
+    background-color: orange;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
+/* Color change for the dotted circle */
+@keyframes changeDottedColor {
+  0%,
+  100% {
+    border-color: red;
+  }
+  25% {
+    border-color: blue;
+  }
+  50% {
+    border-color: green;
+  }
+  75% {
+    border-color: orange;
+  }
+}
+
+/* Rotation of the entire dotted circle */
+@keyframes rotateCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Color wave effect for "Learnoso" text */
+@keyframes waveColor {
+  0% {
+    color: red;
+  }
+  25% {
+    color: blue;
+  }
+  50% {
+    color: green;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: red;
+  }
+}
+
+/* Title display animation */
+.title {
+  display: none;
+  position: absolute;
+  font-size: 1.2rem;
+  font-weight: bold;
+  animation: showTitle 4s infinite;
+}
+
+@keyframes showTitle {
+  0%,
+  97% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
