@@ -1,0 +1,47 @@
+@keyframes rotate-clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-counterclockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.loader-svg {
+  width: 128px;
+  height: 128px;
+}
+
+.rotate-clockwise {
+  animation: rotate-clockwise 2s linear infinite;
+  transform-origin: center;
+}
+
+.rotate-counterclockwise {
+  animation: rotate-counterclockwise 2s linear infinite;
+  transform-origin: center;
+}
+/* Size classes */
+.large {
+  width: 128px;
+  height: 128px;
+}
+
+.medium {
+  width: 44px;
+  height: 44px;
+}
+
+.small {
+  width: 32px;
+  height: 32px;
+}
